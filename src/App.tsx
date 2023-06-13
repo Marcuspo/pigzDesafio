@@ -14,7 +14,11 @@ const App = () => {
     <SafeAreaProvider>
       <NavigationContainer>
         {/* <StatusBar barStyle="light-content" /> // ajustar por padrao do dispositivo */} 
-        <Stack.Navigator >
+        <Stack.Navigator 
+          screenOptions={{
+            headerShown: false
+          }} 
+        >
           <Stack.Screen name='Login' component={Login} />
         </Stack.Navigator>
       </NavigationContainer>
