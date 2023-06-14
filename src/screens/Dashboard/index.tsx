@@ -8,9 +8,11 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import Earnings from './components/Earnings';
 import Resume from './components/Resume';
 import NewDelivery from './components/NewDelivery';
+import { useNavigation } from '@react-navigation/native';
 
 const Dashboard = () => {
      const insets = useSafeAreaInsets();
+     const navigation = useNavigation();
 
      return (
           <KeyboardAwareScrollView style={{flex: 1, backgroundColor: 'white'}}>
@@ -22,8 +24,8 @@ const Dashboard = () => {
                          paddingRight: insets.right,
                     }}>
                          <Styles.Header>
-                              <Styles.Button>
-                                   <Icons name="back-button"  width={25} height={30} color='#FF671F' />
+                              <Styles.Button onPress={() => navigation.goBack()}>
+                                   <Icons name="back-button" width={25} height={30} color='#FF671F' />
                               </Styles.Button>
                                    <Styles.TextHeader>Visão geral</Styles.TextHeader>
                                    <View style={{ width: 20}} />

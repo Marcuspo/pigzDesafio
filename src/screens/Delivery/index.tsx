@@ -5,9 +5,11 @@ import * as Styles from './styles'
 import Icons from '../../components/Icons';
 import HeaderInformation from './components/HeaderInformation';
 import InformationDelivery from './components/InformationDelivery';
+import { useNavigation } from '@react-navigation/native';
 
 const Delivery = () => {
      const insets = useSafeAreaInsets();
+     const navigation = useNavigation();
 
      return (
           <Styles.FullContainer>
@@ -18,8 +20,8 @@ const Delivery = () => {
                     paddingRight: insets.right,
                }}>
                     <Styles.Header>
-                         <Styles.Button>
-                              <Icons name="back-button"  width={25} height={30} color='#FF671F' />
+                         <Styles.Button onPress={() => navigation.goBack()}>
+                              <Icons name="back-button" width={25} height={30} color='#FF671F' />
                          </Styles.Button>
                               <Styles.TextHeader>Nova entrega</Styles.TextHeader>
                               <View style={{ width: 20}} />
