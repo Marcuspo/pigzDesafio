@@ -1,16 +1,29 @@
 import React, { useState } from 'react';
-import { TextInput, View } from 'react-native';
+import { Alert, TextInput, View } from 'react-native';
 import Icons from '../../Components/Icons';
 import * as Styles from './styles'
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import LinearGradient from 'react-native-linear-gradient';
 import { Line, Svg } from 'react-native-svg';
+import { useNavigation } from '@react-navigation/native';
 
 const Login = () => {
      const [emailAndCell, setEmailAndCell] = useState("");
      const [password, setPassword] = useState("");
      const [showPassword, setShowPassword] = useState(true);
+
      const insets = useSafeAreaInsets();
+     const navigation = useNavigation();
+
+     const pressToLogin = () => {
+          // if(emailAndCell === "" || password === "" ) {
+          //      return Alert.alert("Error", "Verifique os campos de login...");
+          // } else { 
+          // }
+          navigation.navigate('Dashboard');
+     }
+
+
      return (
           <Styles.FullContainer>
                <Styles.Container style={{
@@ -33,7 +46,6 @@ const Login = () => {
                          placeholder='example@pigz.com.br'
                          keyboardType='email-address'
                          style={{ borderWidth: 1, borderColor: '#FA641E', borderRadius: 15, paddingLeft: 16, fontFamily: 'Poppins-Regular', fontSize: 14}}
-                         
                     />
 
                     <Styles.TextPassword>Senha</Styles.TextPassword>
@@ -57,7 +69,7 @@ const Login = () => {
                     </Styles.ButtonForgetPassword>
 
                     <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['#FF881F', '#FA641E']} style={{backgroundColor: 'red', marginTop: 24, borderRadius: 15}}>
-                         <Styles.ButtonSignIn>
+                         <Styles.ButtonSignIn onPress={() => pressToLogin()}>
                               <Styles.TextNameSignIn>Entrar</Styles.TextNameSignIn>
                          </Styles.ButtonSignIn>
                     </LinearGradient>
