@@ -8,7 +8,7 @@ import Login from './screens/Login/index';
 import Dashboard from './screens/Dashboard';
 import Delivery from './screens/Delivery';
 import Report from './screens/Report';
-import Icons from './Components/Icons';
+import Icons from './components/Icons';
 import Profile from './screens/Profile';
 import { RFValue } from 'react-native-responsive-fontsize';
 

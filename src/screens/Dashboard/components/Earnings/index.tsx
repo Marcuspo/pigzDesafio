@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as Styles from './styles';
 import { TouchableOpacity } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient';
-import Icons from '../../../../Components/Icons';
+import Icons from '../../../../components/Icons';
 
 interface Props {
    nameHeader: string;

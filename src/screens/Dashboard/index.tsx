@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import * as Styles from './styles';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Icons from '../../Components/Icons';
+import Icons from '../../components/Icons';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 import Earnings from './components/Earnings';

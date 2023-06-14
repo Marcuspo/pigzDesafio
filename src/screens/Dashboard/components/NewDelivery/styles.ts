@@ -48,7 +48,7 @@ export const TextButton = styled.Text`
    font-family: 'Poppins-Medium';
 `
 
-export const ContainerQrCode = styled.TouchableOpacity`
+export const ContainerQrCode = styled.View`
    flex-direction: row;
    justify-content: center;
    align-items: center;

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { TextInput } from 'react-native'
+import { TextInput, TouchableOpacity } from 'react-native'
 import * as Styles from './styles';
-import Icons from '../../../../Components/Icons';
+import Icons from '../../../../components/Icons';
 import LinearGradient from 'react-native-linear-gradient';
+import { useNavigation } from '@react-navigation/native';
 
 const NewDelivery = () => {
    const [newDelivery, setNewDelivery] = useState("");
+   const navigation = useNavigation();
 
    return (
       <Styles.Container style={{ shadowOffset: {
@@ -36,17 +38,19 @@ const NewDelivery = () => {
                   value={newDelivery}
                   onChangeText={setNewDelivery}
                />
-               <Styles.ButtonOk>
+               <Styles.ButtonOk onPress={() => navigation.navigate('Delivery')}>
                   <Styles.TextButton>Ok</Styles.TextButton>
                </Styles.ButtonOk>
             </Styles.ContainerInputAndButton>
 
-            <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['#FF881F', '#FA641E']} style={{marginBottom: 24, marginHorizontal: 14, borderRadius: 15}}>
-               <Styles.ContainerQrCode>
-                  <Icons name="qrcode" />
-                  <Styles.TextQrcode>Escanear Qrcode</Styles.TextQrcode>
-               </Styles.ContainerQrCode>
-            </LinearGradient>
+            <TouchableOpacity>
+               <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={['#FF881F', '#FA641E']} style={{marginBottom: 24, marginHorizontal: 14, borderRadius: 15}}>
+                  <Styles.ContainerQrCode>
+                     <Icons name="qrcode" />
+                     <Styles.TextQrcode>Escanear Qrcode</Styles.TextQrcode>
+                  </Styles.ContainerQrCode>
+               </LinearGradient>
+            </TouchableOpacity>
 
       </Styles.Container>
    )

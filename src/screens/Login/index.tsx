@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Alert, TextInput, View } from 'react-native';
-import Icons from '../../Components/Icons';
+import Icons from '../../components/Icons';
 import * as Styles from './styles'
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import LinearGradient from 'react-native-linear-gradient';
